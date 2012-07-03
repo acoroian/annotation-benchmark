@@ -16,6 +16,8 @@
 		3A357E4115A37BCD00AB3A6D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A357E3F15A37BCD00AB3A6D /* MapViewController.m */; };
 		3A357E4215A37BCD00AB3A6D /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A357E4015A37BCD00AB3A6D /* MapViewController.xib */; };
 		3A357E4415A37C2B00AB3A6D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A357E4315A37C2B00AB3A6D /* MapKit.framework */; };
+		3A357E4F15A38ABE00AB3A6D /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A357E4E15A38ABE00AB3A6D /* Annotation.m */; };
+		3A357E5215A38DC400AB3A6D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A357E5115A38DC400AB3A6D /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,9 @@
 		3A357E3F15A37BCD00AB3A6D /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		3A357E4015A37BCD00AB3A6D /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		3A357E4315A37C2B00AB3A6D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3A357E4D15A38ABE00AB3A6D /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
+		3A357E4E15A38ABE00AB3A6D /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
+		3A357E5115A38DC400AB3A6D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +49,7 @@
 				3A357E2A15A37B5100AB3A6D /* Foundation.framework in Frameworks */,
 				3A357E2C15A37B5100AB3A6D /* CoreGraphics.framework in Frameworks */,
 				3A357E4415A37C2B00AB3A6D /* MapKit.framework in Frameworks */,
+				3A357E5215A38DC400AB3A6D /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +76,7 @@
 		3A357E2615A37B5100AB3A6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A357E5115A38DC400AB3A6D /* CoreLocation.framework */,
 				3A357E4315A37C2B00AB3A6D /* MapKit.framework */,
 				3A357E2715A37B5100AB3A6D /* UIKit.framework */,
 				3A357E2915A37B5100AB3A6D /* Foundation.framework */,
@@ -87,6 +94,8 @@
 				3A357E3E15A37BCD00AB3A6D /* MapViewController.h */,
 				3A357E3F15A37BCD00AB3A6D /* MapViewController.m */,
 				3A357E4015A37BCD00AB3A6D /* MapViewController.xib */,
+				3A357E4D15A38ABE00AB3A6D /* Annotation.h */,
+				3A357E4E15A38ABE00AB3A6D /* Annotation.m */,
 			);
 			path = TESTMAP;
 			sourceTree = "<group>";
@@ -167,6 +176,7 @@
 				3A357E3415A37B5100AB3A6D /* main.m in Sources */,
 				3A357E3815A37B5100AB3A6D /* AppDelegate.m in Sources */,
 				3A357E4115A37BCD00AB3A6D /* MapViewController.m in Sources */,
+				3A357E4F15A38ABE00AB3A6D /* Annotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +280,7 @@
 				3A357E3D15A37B5100AB3A6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
