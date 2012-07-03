@@ -10,8 +10,6 @@
 #import "Annotation.h"
 #import <CoreLocation/CoreLocation.h>
 
-#define ANNOTATIONS_TO_ADD 6000
-
 @interface MapViewController ()
 @property NSTimeInterval benchmark;
 @property (strong) NSMutableArray* annotations;
@@ -40,21 +38,29 @@
     MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
     [self.mapView setRegion:region];
     // Do any additional setup after loading the view from its nib.
+    for(int i = 100; i <= 15000; i+=100) {
+        [self addAnnotations:i];
+    }
+}
+
+
+-(void)addAnnotations:(int) numberAnnotations {
+    [self.mapView removeAnnotations:self.mapView.annotations];
     benchmark = [[NSDate date] timeIntervalSince1970];
-    [self addAnnotationsAtOnce];
+    [self addAnnotationsAtOnce:numberAnnotations];
     benchmark = [[NSDate date] timeIntervalSince1970] - benchmark;
     NSLog(@"RESULTS AT ONCE: %f", benchmark);
     [self.mapView removeAnnotations:self.mapView.annotations];
     
     benchmark = [[NSDate date] timeIntervalSince1970];
-    [self addAnnotationsIndividually];
+    [self addAnnotationsIndividually:numberAnnotations];
     benchmark = [[NSDate date] timeIntervalSince1970] - benchmark;
     NSLog(@"RESULTS INDIVIDUALLY: %f", benchmark);
 }
 
-- (void)addAnnotationsAtOnce {
+- (void)addAnnotationsAtOnce:(int) numberAnnotations {
     self.annotations = [[NSMutableArray alloc] init ];
-    for(int i = 0; i < ANNOTATIONS_TO_ADD; i++) {
+    for(int i = 0; i < numberAnnotations; i++) {
         CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(0, i%50);
         Annotation* annotation = [[Annotation alloc] initWithCoordinate:coord];
         [self.annotations addObject:annotation];
@@ -63,8 +69,8 @@
 }
 
 
-- (void)addAnnotationsIndividually {
-    for(int i = 0; i < ANNOTATIONS_TO_ADD; i++) {
+- (void)addAnnotationsIndividually:(int) numberAnnotations {
+    for(int i = 0; i < numberAnnotations; i++) {
         CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(0, i%50);
         Annotation* annotation = [[Annotation alloc] initWithCoordinate:coord];
         [self.mapView addAnnotation:annotation];
@@ -86,7 +92,7 @@
     else
     {
         // Try to dequeue an existing pin view first.
-        MKPinAnnotationView* pinView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"stashMarkerID"];
+        MKPinAnnotationView* pinView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"1"];
         if(!pinView)
         {
             // If an existing pin view was not available, create one.
